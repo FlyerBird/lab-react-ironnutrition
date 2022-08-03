@@ -12,19 +12,13 @@ function App() {
     <div className="App">
     
       <h1>Food List</h1>
-      {foodList.map(food => (
-        <div> 
-          <p>{food.name}</p>
-          <img src={food.image} alt='food elem' width={150}/>
-        </div>
-      ))}
 
-      <FoodBox food={ {
-      name: "Orange",
-      calories: 85,
-      image: "https://i.imgur.com/abKGOcv.jpg",
-      servings: 1
-    }} />
+      <div className='foodBox'>
+       {foodList.map(el => {
+          return <FoodBox foodArr={{ name: el.name, calories: el.calories, image: el.image, servings: el.servings }} />
+        })}
+      </div>
+
     </div>
   );
 }

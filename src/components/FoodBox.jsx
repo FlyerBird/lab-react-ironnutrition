@@ -2,18 +2,18 @@ import React from 'react';
 import {Card, Col, Button} from 'antd';
 
 export default function FoodBox(props) {
-    const { food } = props;
+    const { foodArr } = props;
   return (
     <Col>
         <Card
-            title={food.name}
+            title={foodArr.name}
             style={{ width: 230, height: 300, margin: 10 }}
             >
-            <img src={food.image} height={60} alt="food" />
-            <p>Calories: {food.calories}</p>
-            <p>Servings: {food.servings}</p>
+            <img src={foodArr.image} height={60} alt="food" />
+            <p>Calories: {foodArr.calories}</p>
+            <p>Servings: {foodArr.servings}</p>
             <p>
-                <b>Total Calories: {food.calories * food.servings }</b> kcal
+                <b>Total Calories: {foodArr.calories * foodArr.servings }</b> kcal
             </p>
             <Button type="primary"> Delete </Button>
         </Card>
