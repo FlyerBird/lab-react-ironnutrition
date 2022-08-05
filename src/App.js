@@ -26,6 +26,13 @@ function App() {
       setFoodList(foodListCopy);
   }
 
+  const handleDelete = (kaka) => {
+    const deleteFood = foodList.filter(elem => {
+      return elem.name !== kaka
+    })
+    setFoodList(deleteFood)
+  }
+
   return (
     <div className="App">
     
@@ -41,7 +48,7 @@ function App() {
 
       <div className='foodBox'>
        {foodList.map(el => {
-          return <FoodBox foodArr={{ name: el.name, calories: el.calories, image: el.image, servings: el.servings }} />
+          return <FoodBox onDelete={handleDelete} foodArr={{ name: el.name, calories: el.calories, image: el.image, servings: el.servings }} />
         })}
       </div>
       
