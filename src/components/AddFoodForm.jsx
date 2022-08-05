@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Divider, Input, Button } from 'antd';
+import { Divider, Input } from 'antd';
 
 
 export default function AddFoodForm(props) {
@@ -18,6 +18,10 @@ export default function AddFoodForm(props) {
         servings: parseInt(servings)
     }
     newAddedFood(food)
+    setName('');
+    setImage('');
+    setCalories('');
+    setServings('');
    
 }
 
@@ -39,7 +43,7 @@ export default function AddFoodForm(props) {
             <label>Servings</label>
             <Input type="number" value={servings} onChange={(e) => { setServings(e.target.value) }}/>
 
-            <Button type='submit'>Create</Button>
+            <button type='submit'>Create</button>
         
         </form>
 
