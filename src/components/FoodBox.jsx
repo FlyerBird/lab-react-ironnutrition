@@ -3,20 +3,20 @@ import {Card, Col, Button} from 'antd';
 
 
 export default function FoodBox(props) {
-    const { foodArr, onDelete } = props;
+    const { food, onDelete } = props;
   return (
     <Col>
         <Card
-            title={foodArr.name}
+            title={food.name}
             style={{ width: 230, height: 300, margin: 10 }}
             >
-            <img src={foodArr.image} height={60} alt="food" />
-            <p>Calories: {foodArr.calories}</p>
-            <p>Servings: {foodArr.servings}</p>
+            <img src={food.image} height={60} alt="food" />
+            <p>Calories: {food.calories}</p>
+            <p>Servings: {food.servings}</p>
             <p>
-                <b>Total Calories: {foodArr.calories * foodArr.servings }</b> kcal
+                <b>Total Calories: {food.calories * food.servings }</b> kcal
             </p>
-            <Button type="primary" onClick={() => onDelete(foodArr.name)}> Delete </Button>
+            <Button type="primary" onClick={() => onDelete(food.name)}> Delete </Button>
         </Card>
     </Col>
   )

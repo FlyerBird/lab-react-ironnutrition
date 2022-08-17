@@ -48,7 +48,7 @@ function App() {
 
       <div className='foodBox'>
        {foodList.map(el => {
-          return <FoodBox onDelete={handleDelete} foodArr={{ name: el.name, calories: el.calories, image: el.image, servings: el.servings }} />
+          return <FoodBox onDelete={handleDelete} food={{ name: el.name, calories: el.calories, image: el.image, servings: el.servings }} />
         })}
       </div>
       
